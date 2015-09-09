@@ -21,6 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 import groovy.json.JsonSlurper
 import java.util.concurrent.TimeUnit
 import org.kurron.example.rest.ApplicationProperties
+import org.kurron.example.rest.feedback.ExampleFeedbackContext
 import org.kurron.feedback.AbstractFeedbackAware
 import org.kurron.stereotype.InboundRestGateway
 import org.springframework.amqp.core.Message
@@ -94,6 +95,7 @@ class RestInboundGateway extends AbstractFeedbackAware {
         Thread.sleep( delay )
 
         def generatedId = UUID.randomUUID().toString()
+        feedbackProvider.sendFeedback( ExampleFeedbackContext.DATA_STORED, generatedId )
         theRedisTemplate.opsForHash().putAll( generatedId, ['command': command] )
         theRedisTemplate.expire( generatedId, 60L, TimeUnit.SECONDS )
 
