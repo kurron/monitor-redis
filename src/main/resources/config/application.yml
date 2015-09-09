@@ -25,6 +25,20 @@ spring:
         serialization:
             indent_output: true
 
+    redis:
+        database: 0
+        host: redis
+#       password: password
+        port: 6379
+        pool:
+            max-idle: 8
+            min-idle: 0
+            max-active: 8
+            max-wait: -1
+#       sentinel:
+#           master: master
+#           nodes: a:1234, b:4567
+
 # specify the port the service should bind to when using the embedded container, a value of 0 will bind to a randomly selected available port
 server:
     port: 8200
