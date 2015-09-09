@@ -18,17 +18,6 @@ spring:
     main:
         show_banner: true
 
-    data:
-        mongodb:
-            host: mongodb
-            port: 27017
-#           authenticationDatabase: admin
-#           username: readWrite
-#           password: readWrite
-            database: monitor
-            repositories:
-                enabled: true
-
     groovy:
         template:
             check-template-location: false
