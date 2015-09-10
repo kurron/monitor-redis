@@ -107,7 +107,7 @@ class RestInboundGateway extends AbstractFeedbackAware {
 
     private static MessageProperties newProperties() {
         MessagePropertiesBuilder.newInstance().setAppId( 'monitor-redis' )
-                                              .setContentType( 'application/json' )
+                                              .setContentType( 'text/plain' )
                                               .setMessageId( UUID.randomUUID().toString() )
                                               .setDeliveryMode( MessageDeliveryMode.NON_PERSISTENT )
                                               .setTimestamp( Calendar.instance.time )
