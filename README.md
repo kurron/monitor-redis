@@ -48,7 +48,7 @@ The application's configuration settings are controlled via `src/main/resources/
 the application, if desired.  A simpler way is to override those settings at application launch time.  For example:
 
 ```bash
-$JAVA_HOME/bin/java -jar build/libs/monitor-mongodb-0.0.0-RELEASE.jar --server.port=1234 --spring.rabbitmq.host=192.168.1.10
+$JAVA_HOME/bin/java -jar build/libs/monitor-redis-0.0.0-RELEASE.jar --server.port=1234 --spring.rabbitmq.host=192.168.1.10
 ```
 
 #Troubleshooting
